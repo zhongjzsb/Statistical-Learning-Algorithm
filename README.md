@@ -1,7 +1,10 @@
 # Statistical-Learning-Algorithm
 For self study of statistical learning algorithm
 
-You can find the [overall summary](https://cdn.rawgit.com/zhongjzsb/Statistical-Learning-Algorithm/master/Overall%20Summary.nb.html) may be useful
+You can find the
+[overall summary](https://cdn.rawgit.com/zhongjzsb/Statistical-Learning-Algorithm/master/Overall%20Summary.nb.html)
+(or this [link](http://htmlpreview.github.io/?https://github.com/zhongjzsb/Statistical-Learning-Algorithm/blob/master/Overall%20Summary.nb.html))
+may be useful
 
 
 References
