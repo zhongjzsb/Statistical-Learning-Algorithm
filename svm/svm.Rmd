@@ -1,0 +1,133 @@
+---
+title: "Support Vector Machine"
+author: Jingyu Bao
+date: 2016-11-14
+output: html_notebook
+---
+
+
+The Class is y label.
+
+```{r}
+library(caret)
+
+data(segmentationData)
+
+segmentationData %>% 
+    head(10)
+
+set.seed(100)
+trainIndex <- createDataPartition(segmentationData$Class, p = .8, 
+                                  list = FALSE, 
+                                  times = 1)
+
+segTrain <- segmentationData[trainIndex,]
+segTest <- segmentationData[-trainIndex,]
+trainX <- segTrain[,4:61]
+
+set.seed(1000)
+fitControl <- trainControl(## 10-fold CV
+                           method = "repeatedcv",
+                           number = 10,
+                           ## repeated five times
+                           repeats = 5)
+
+svmFit <- train(x = trainX, 
+                y = segTrain$Class,
+                data = segTrain,
+                method = "svmLinear", 
+                trControl = fitControl,
+                tuneLength = 15)
+svmFit
+```
+
+Predict/Test
+```{r}
+segPred <- predict(svmFit, segTest[,4:61])
+
+segPred %>% 
+    head(10)
+
+confusionMatrix(data = segPred, reference = segTest$Class)
+
+postResample(pred = segPred, obs = segTest$Class)
+```
+
+
+
+
+For Kappa statistic, from [here](http://stats.stackexchange.com/questions/82162/kappa-statistic-in-plain-english)
+
+> Kappa = (observed accuracy - expected accuracy)/(1 - expected accuracy)
+
+> There is not a standardized interpretation of the kappa statistic. According to Wikipedia (citing their paper), Landis and Koch considers 0-0.20 as slight, 0.21-0.40 as fair, 0.41-0.60 as moderate, 0.61-0.80 as substantial, and 0.81-1 as almost perfect. Fleiss considers kappas > 0.75 as excellent, 0.40-0.75 as fair to good, and < 0.40 as poor.
+
+
+Visualization
+
+```{r}
+library(e1071)
+data(cats, package = "MASS")
+m <- svm(Sex~., data = cats)
+plot(m, cats)
+
+svmRadialFit <- train(Species ~ .,
+                data = iris, 
+                method = "svmRadial", 
+                metric = "Kappa",
+                control = trainControl(method = "cv"))
+
+
+plot(svmRadialFit, metric = svmRadialFit$metric)
+
+ggplot(svmRadialFit) + theme_bw()
+```
+
+
+
+### Others
+
+
+example from [here](https://www.r-bloggers.com/the-5th-tribe-support-vector-machines-and-caret/)
+
+```{r}
+## SUPPORT VECTOR MACHINE MODEL
+# First pass
+set.seed(1492)
+# Setup for cross validation
+ctrl <- trainControl(method="repeatedcv",   # 10fold cross validation
+                     repeats=2,		    # do 2 repititions of cv
+                     summaryFunction=twoClassSummary,	# Use AUC to pick the best model
+                     classProbs=TRUE)
+ 
+ 
+#Train and Tune the SVM
+svm.tune <- train(x =trainX,
+                  y = segTrain$Class,
+                  method = "svmRadial",   # Radial kernel
+                  tuneLength = 9,					# 9 values of the cost function
+                  preProc = c("center","scale"),  # Center and scale data
+                  metric = "ROC",
+                  trControl = ctrl)
+svm.tune
+```
+
+
+Another example from [here](http://machinelearningmastery.com/non-linear-regression-in-r/)
+
+```{r}
+# load the package
+library(kernlab)
+# load data
+data(longley)
+# fit model
+fit <- ksvm(Employed~., longley)
+# summarize the fit
+summary(fit)
+# make predictions
+predictions <- predict(fit, longley)
+# summarize accuracy
+rmse <- mean((longley$Employed - predictions)^2)
+print(rmse)
+```
+

@@ -1,0 +1,43 @@
+---
+title: "Parallel Computing"
+author: Jingyu Bao
+date: 2016-11-15
+output: html_notebook
+---
+
+Use the package 'doParallel'.
+
+Use the seeds function in trainControl function in caret package to make sure the algorithm can be reproduced exactly, even using parallel computing
+
+To 
+
+
+
+References
+
+[stackoverflow](http://stackoverflow.com/questions/13403427/fully-reproducible-parallel-models-using-caret)
+
+```{r}
+library(doParallel)
+
+#create a list of seed, here change the seed for each resampling
+set.seed(123)
+seeds <- vector(mode = "list", length = 11)#length is = (n_repeats*nresampling)+1
+for(i in 1:10) seeds[[i]]<- sample.int(n=1000, 3) #(3 is the number of tuning parameter, mtry for rf, here equal to ncol(iris)-2)
+
+seeds[[11]]<-sample.int(1000, 1)#for the last model
+
+ #control list
+ myControl <- trainControl(method='cv', seeds=seeds, index=createFolds(iris$Species))
+
+ #run model in parallel
+ cl <- makeCluster(detectCores())
+ registerDoParallel(cl)
+ model1 <- train(Species~., iris, method='rf', trControl=myControl)
+
+ model2 <- train(Species~., iris, method='rf', trControl=myControl)
+ stopCluster(cl)
+
+ #compare
+ all.equal(predict(model1, type='prob'), predict(model2, type='prob'))
+```

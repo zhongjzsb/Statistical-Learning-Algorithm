@@ -1,0 +1,30 @@
+---
+title: "Time Series Plots"
+author: Jingyu Bao
+date: 2016-11-14
+output: html_notebook
+---
+
+
+```{r}
+sample_matrix %>% 
+    glimpse()
+
+ts <- as.xts(sample_matrix)
+
+close_ts <- xts(sample_matrix[,4], order.by = as.Date(rownames(sample_matrix)))
+colnames(close_ts) <- 'close'
+```
+
+Look at the acf and pacf, the data seems to be AR(1). 
+To look at the periodogram, we need to remove the trend first.
+```{r, fig.height=6, fig.width=8}
+acf(close_ts)
+pacf(close_ts)
+spec.pgram(close_ts)
+```
+
+### References
+
+time series with ggplot can be found [here](http://rstudio-pubs-static.s3.amazonaws.com/9428_1197bd003ebd43c49b429f22ea4f36e5.html)
+

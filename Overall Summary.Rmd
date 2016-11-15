@@ -1,0 +1,55 @@
+---
+title: "Machine Learning Algorithms Summary"
+author: Jingyu Bao
+date: 2016-11-14
+output: html_notebook
+---
+
+
+This [Folder](./) contains all the algorithm notebooks.
+
+To modify the automatic-load libraries, change in [.Rprofile](./.Rprofile).
+
+## Data
+
+To see which data are avilable in R.
+```{r}
+data()
+```
+More data can be found in package mlbench
+
+
+## R packages for Machine Learning
+Try to learn the package of [caret](http://topepo.github.io/caret/index.html).
+
+- [General Caret Functions](./caret functions/Tuning Parameters.nb.html)
+
+## Supervised Learning
+
+- [SVM](./svm/svm.nb.html)
+
+## Unsupervised Learning
+
+- [Kmeans](./kmeans/kmeans.nb.html)
+
+
+## Time Series Analysis
+
+- [Time Series General Plots](./time series/ts_plots.nb.html)
+
+- [Time Series Train](./time series/ts_trains.nb.html)
+
+## Parallel Computing in Caret package
+
+If the computation takes too long, use parallel computing may speed up your algorithm
+
+- [Parallel Computing Example](./parallel computing/parallel computing example.nb.html)
+
+
+## Learning Curve
+
+- [Learning Curve](./learning curve/Learning Curve.nb.html)
+
+References
+
+[caret](http://topepo.github.io/caret/index.html)

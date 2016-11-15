@@ -1,0 +1,6 @@
+---
+title: "K-means"
+author: Jingyu Bao
+date: 2016-11-15
+output: html_notebook
+---

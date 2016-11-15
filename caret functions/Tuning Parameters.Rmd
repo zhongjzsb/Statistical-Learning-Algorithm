@@ -1,0 +1,16 @@
+---
+title: "Tuning Parameters"
+author: Jingyu Bao
+date: 2016-11-15
+output: html_notebook
+---
+
+the parameter tuneLength and tuneGrid are used for tuning parameter.
+
+__tuneLength = 5__ means the tuning parameter are chosen from __1 to 15__. 
+
+The tuneGrid are used to specify the tuning parameter values.
+
+References
+
+[caret in r-cran](./caret.pdf)
