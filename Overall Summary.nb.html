@@ -194,35 +194,106 @@ $(document).ready(function () {
 <div id="r-packages-for-machine-learning" class="section level2">
 <h2>R packages for Machine Learning</h2>
 <p>Try to learn the package of <a href="http://topepo.github.io/caret/index.html">caret</a>.</p>
-<p>– <a href="./caret%20functions/Tuning%20Parameters.nb.html">General Caret Functions</a></p>
+<ul>
+<li><a href="./caret%20functions/Tuning%20Parameters.nb.html">General Caret Functions</a></li>
+</ul>
+<p>Use getModelinfo() function to know the details.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3ZtTGluZWFySW5mb1tbMV1dICU+JVxuICAgIGdsaW1wc2UoKVxuXG5gYGAifQ== -->
+<pre class="r"><code>svmLinearInfo[[1]] %&gt;%
+    glimpse()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTGlzdCBvZiAxM1xuICQgbGFiZWwgICAgIDogY2hyIFwiU3VwcG9ydCBWZWN0b3IgTWFjaGluZXMgd2l0aCBMaW5lYXIgS2VybmVsXCJcbiAkIGxpYnJhcnkgICA6IGNociBcImtlcm5sYWJcIlxuICQgdHlwZSAgICAgIDogY2hyIFsxOjJdIFwiUmVncmVzc2lvblwiIFwiQ2xhc3NpZmljYXRpb25cIlxuICQgcGFyYW1ldGVyczonZGF0YS5mcmFtZSc6XHQxIG9icy4gb2YgIDMgdmFyaWFibGVzOlxuICAuLiQgcGFyYW1ldGVyOiBGYWN0b3Igdy8gMSBsZXZlbCBcIkNcIjogMVxuICAuLiQgY2xhc3MgICAgOiBGYWN0b3Igdy8gMSBsZXZlbCBcIm51bWVyaWNcIjogMVxuICAuLiQgbGFiZWwgICAgOiBGYWN0b3Igdy8gMSBsZXZlbCBcIkNvc3RcIjogMVxuICQgZ3JpZCAgICAgIDpmdW5jdGlvbiAoeCwgeSwgbGVuID0gTlVMTCwgc2VhcmNoID0gXCJncmlkXCIpICBcbiAgLi4tIGF0dHIoKiwgXCJzcmNyZWZcIik9Q2xhc3MgJ3NyY3JlZicgIGF0b21pYyBbMTo4XSA3IDI2IDE0IDE5IDI2IDE5IDcgMTRcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAkIGxvb3AgICAgICA6IE5VTExcbiAkIGZpdCAgICAgICA6ZnVuY3Rpb24gKHgsIHksIHd0cywgcGFyYW0sIGxldiwgbGFzdCwgY2xhc3NQcm9icywgLi4uKSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gMTYgMjUgMjkgMTkgMjUgMTkgMTYgMjlcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAkIHByZWRpY3QgICA6ZnVuY3Rpb24gKG1vZGVsRml0LCBuZXdkYXRhLCBzdWJtb2RlbHMgPSBOVUxMKSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gMzAgMjkgNTUgMTkgMjkgMTkgMzAgNTVcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAkIHByb2IgICAgICA6ZnVuY3Rpb24gKG1vZGVsRml0LCBuZXdkYXRhLCBzdWJtb2RlbHMgPSBOVUxMKSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gNTYgMjYgNzUgMTkgMjYgMTkgNTYgNzVcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAgLi4tIGF0dHIoKiwgXCJzcmNyZWZcIik9Q2xhc3MgJ3NyY3JlZicgIGF0b21pYyBbMTo4XSA3NiAzMiA4NSAxOSAzMiAxOSA3NiA4NVxuICAuLiAuLiAuLi0gYXR0cigqLCBcInNyY2ZpbGVcIik9Q2xhc3NlcyAnc3JjZmlsZWNvcHknLCAnc3JjZmlsZScgPGVudmlyb25tZW50OiAweDAwMDAwMDAwMDM1Zjg1MTg+IFxuICQgdGFncyAgICAgIDogY2hyIFsxOjVdIFwiS2VybmVsIE1ldGhvZFwiIFwiU3VwcG9ydCBWZWN0b3IgTWFjaGluZXNcIiBcIkxpbmVhciBSZWdyZXNzaW9uXCIgXCJMaW5lYXIgQ2xhc3NpZmllclwiIC4uLlxuICQgbGV2ZWxzICAgIDpmdW5jdGlvbiAoeCkgIFxuICAuLi0gYXR0cigqLCBcInNyY3JlZlwiKT1DbGFzcyAnc3JjcmVmJyAgYXRvbWljIFsxOjhdIDg4IDI4IDg4IDQ1IDI4IDQ1IDg4IDg4XG4gIC4uIC4uIC4uLSBhdHRyKCosIFwic3JjZmlsZVwiKT1DbGFzc2VzICdzcmNmaWxlY29weScsICdzcmNmaWxlJyA8ZW52aXJvbm1lbnQ6IDB4MDAwMDAwMDAwMzVmODUxOD4gXG4gJCBzb3J0ICAgICAgOmZ1bmN0aW9uICh4KSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gODkgMjYgOTQgMTkgMjYgMTkgODkgOTRcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiJ9 -->
+<pre><code>List of 13
+ $ label     : chr &quot;Support Vector Machines with Linear Kernel&quot;
+ $ library   : chr &quot;kernlab&quot;
+ $ type      : chr [1:2] &quot;Regression&quot; &quot;Classification&quot;
+ $ parameters:'data.frame': 1 obs. of  3 variables:
+  ..$ parameter: Factor w/ 1 level &quot;C&quot;: 1
+  ..$ class    : Factor w/ 1 level &quot;numeric&quot;: 1
+  ..$ label    : Factor w/ 1 level &quot;Cost&quot;: 1
+ $ grid      :function (x, y, len = NULL, search = &quot;grid&quot;)  
+  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 7 26 14 19 26 19 7 14
+  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
+ $ loop      : NULL
+ $ fit       :function (x, y, wts, param, lev, last, classProbs, ...)  
+  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 16 25 29 19 25 19 16 29
+  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
+ $ predict   :function (modelFit, newdata, submodels = NULL)  
+  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 30 29 55 19 29 19 30 55
+  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
+ $ prob      :function (modelFit, newdata, submodels = NULL)  
+  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 56 26 75 19 26 19 56 75
+  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
+  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 76 32 85 19 32 19 76 85
+  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
+ $ tags      : chr [1:5] &quot;Kernel Method&quot; &quot;Support Vector Machines&quot; &quot;Linear Regression&quot; &quot;Linear Classifier&quot; ...
+ $ levels    :function (x)  
+  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 88 28 88 45 28 45 88 88
+  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
+ $ sort      :function (x)  
+  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 89 26 94 19 26 19 89 94
+  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="supervised-learning" class="section level2">
 <h2>Supervised Learning</h2>
-<p>– <a href="./svm/svm.nb.html">SVM</a></p>
+<div id="regression" class="section level3">
+<h3>Regression</h3>
+<ul>
+<li><p><a href="./Linear%20Regression/Linear%20Regression.nb.html">Linear Regression</a></p></li>
+<li><p>glmnet?</p></li>
+<li><p>Ensembles of Generalized Lienar Models</p></li>
+</ul>
+<div id="time-series-analysis" class="section level4">
+<h4>Time Series Analysis</h4>
+<ul>
+<li><p><a href="./time%20series/ts_plots.nb.html">Time Series General Plots</a></p></li>
+<li><p><a href="./time%20series/ts_trains.nb.html">Time Series Train</a></p></li>
+</ul>
+</div>
+</div>
+<div id="classification" class="section level3">
+<h3>Classification</h3>
+<ul>
+<li><p><a href="./svm/svm.nb.html">SVM</a></p></li>
+<li><p>Adaboost</p></li>
+<li><p>C5.0</p></li>
+<li><p>eXtreme Gradient Boosting</p></li>
+<li><p>k-Nearest Neighbors</p></li>
+<li><p><a href="./Random%20Forest/Random%20forest.nb.html">Random Forest</a></p></li>
+</ul>
+</div>
 </div>
 <div id="unsupervised-learning" class="section level2">
 <h2>Unsupervised Learning</h2>
-<p>– <a href="./kmeans/kmeans.nb.html">Kmeans</a></p>
-</div>
-<div id="time-series-analysis" class="section level2">
-<h2>Time Series Analysis</h2>
-<p>– <a href="./time%20series/ts_plots.nb.html">Time Series General Plots</a></p>
-<p>– <a href="./time%20series/ts_trains.nb.html">Time Series Train</a></p>
+<ul>
+<li><p><a href="./kmeans/kmeans.nb.html">Kmeans</a></p></li>
+<li><p>PCA</p></li>
+</ul>
 </div>
 <div id="parallel-computing-in-caret-package" class="section level2">
 <h2>Parallel Computing in Caret package</h2>
 <p>If the computation takes too long, use parallel computing may speed up your algorithm</p>
-<p>– <a href="./parallel%20computing/parallel%20computing%20example.nb.html">Parallel Computing Example</a></p>
+<ul>
+<li><a href="./parallel%20computing/parallel%20computing%20example.nb.html">Parallel Computing Example</a></li>
+</ul>
 </div>
 <div id="learning-curve" class="section level2">
 <h2>Learning Curve</h2>
-<p>– <a href="./learning%20curve/Learning%20Curve.nb.html">Learning Curve</a></p>
+<ul>
+<li><a href="./learning%20curve/Learning%20Curve.nb.html">Learning Curve</a></li>
+</ul>
 <p>References</p>
 <p><a href="http://topepo.github.io/caret/index.html">caret</a></p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFjaGluZSBMZWFybmluZyBBbGdvcml0aG1zIFN1bW1hcnkiCmF1dGhvcjogSmluZ3l1IEJhbwpkYXRlOiAyMDE2LTExLTE0Cm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpUaGlzIFtGb2xkZXJdKC4vKSBjb250YWlucyBhbGwgdGhlIGFsZ29yaXRobSBub3RlYm9va3MuCgpUbyBtb2RpZnkgdGhlIGF1dG9tYXRpYy1sb2FkIGxpYnJhcmllcywgY2hhbmdlIGluIFsuUnByb2ZpbGVdKC4vLlJwcm9maWxlKS4KCiMjIERhdGEKClRvIHNlZSB3aGljaCBkYXRhIGFyZSBhdmlsYWJsZSBpbiBSLgpgYGB7cn0KZGF0YSgpCmBgYApNb3JlIGRhdGEgY2FuIGJlIGZvdW5kIGluIHBhY2thZ2UgbWxiZW5jaAoKCiMjIFIgcGFja2FnZXMgZm9yIE1hY2hpbmUgTGVhcm5pbmcKVHJ5IHRvIGxlYXJuIHRoZSBwYWNrYWdlIG9mIFtjYXJldF0oaHR0cDovL3RvcGVwby5naXRodWIuaW8vY2FyZXQvaW5kZXguaHRtbCkuIAoKLS0gW0dlbmVyYWwgQ2FyZXQgRnVuY3Rpb25zXSguL2NhcmV0IGZ1bmN0aW9ucy9UdW5pbmcgUGFyYW1ldGVycy5uYi5odG1sKQoKIyMgU3VwZXJ2aXNlZCBMZWFybmluZwoKLS0gW1NWTV0oLi9zdm0vc3ZtLm5iLmh0bWwpCgojIyBVbnN1cGVydmlzZWQgTGVhcm5pbmcKCi0tIFtLbWVhbnNdKC4va21lYW5zL2ttZWFucy5uYi5odG1sKQoKCiMjIFRpbWUgU2VyaWVzIEFuYWx5c2lzCgotLSBbVGltZSBTZXJpZXMgR2VuZXJhbCBQbG90c10oLi90aW1lIHNlcmllcy90c19wbG90cy5uYi5odG1sKQoKLS0gW1RpbWUgU2VyaWVzIFRyYWluXSguL3RpbWUgc2VyaWVzL3RzX3RyYWlucy5uYi5odG1sKQoKIyMgUGFyYWxsZWwgQ29tcHV0aW5nIGluIENhcmV0IHBhY2thZ2UKCklmIHRoZSBjb21wdXRhdGlvbiB0YWtlcyB0b28gbG9uZywgdXNlIHBhcmFsbGVsIGNvbXB1dGluZyBtYXkgc3BlZWQgdXAgeW91ciBhbGdvcml0aG0KCi0tIFtQYXJhbGxlbCBDb21wdXRpbmcgRXhhbXBsZV0oLi9wYXJhbGxlbCBjb21wdXRpbmcvcGFyYWxsZWwgY29tcHV0aW5nIGV4YW1wbGUubmIuaHRtbCkKCgojIyBMZWFybmluZyBDdXJ2ZSAKCi0tIFtMZWFybmluZyBDdXJ2ZV0oLi9sZWFybmluZyBjdXJ2ZS9MZWFybmluZyBDdXJ2ZS5uYi5odG1sKQoKUmVmZXJlbmNlcwoKW2NhcmV0XShodHRwOi8vdG9wZXBvLmdpdGh1Yi5pby9jYXJldC9pbmRleC5odG1sKQ==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIk1hY2hpbmUgTGVhcm5pbmcgQWxnb3JpdGhtcyBTdW1tYXJ5Ig0KYXV0aG9yOiBKaW5neXUgQmFvDQpkYXRlOiAyMDE2LTExLTE0DQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNClRoaXMgW0ZvbGRlcl0oLi8pIGNvbnRhaW5zIGFsbCB0aGUgYWxnb3JpdGhtIG5vdGVib29rcy4NCg0KVG8gbW9kaWZ5IHRoZSBhdXRvbWF0aWMtbG9hZCBsaWJyYXJpZXMsIGNoYW5nZSBpbiBbLlJwcm9maWxlXSguLy5ScHJvZmlsZSkuDQoNCiMjIERhdGENCg0KVG8gc2VlIHdoaWNoIGRhdGEgYXJlIGF2aWxhYmxlIGluIFIuDQpgYGB7cn0NCmRhdGEoKQ0KYGBgDQpNb3JlIGRhdGEgY2FuIGJlIGZvdW5kIGluIHBhY2thZ2UgbWxiZW5jaA0KDQoNCiMjIFIgcGFja2FnZXMgZm9yIE1hY2hpbmUgTGVhcm5pbmcNClRyeSB0byBsZWFybiB0aGUgcGFja2FnZSBvZiBbY2FyZXRdKGh0dHA6Ly90b3BlcG8uZ2l0aHViLmlvL2NhcmV0L2luZGV4Lmh0bWwpLg0KDQotIFtHZW5lcmFsIENhcmV0IEZ1bmN0aW9uc10oLi9jYXJldCBmdW5jdGlvbnMvVHVuaW5nIFBhcmFtZXRlcnMubmIuaHRtbCkNCg0KVXNlIGdldE1vZGVsaW5mbygpIGZ1bmN0aW9uIHRvIGtub3cgdGhlIGRldGFpbHMuDQpgYGB7cn0NCnN2bUxpbmVhckluZm8gPC0gZ2V0TW9kZWxJbmZvKCJzdm1MaW5lYXIiLCByZWdleCA9IEZBTFNFKQ0Kc3ZtTGluZWFySW5mb1tbMV1dICU+JQ0KICAgIGdsaW1wc2UoKQ0KYGBgDQoNCg0KIyMgU3VwZXJ2aXNlZCBMZWFybmluZw0KDQojIyMgUmVncmVzc2lvbg0KDQotIFtMaW5lYXIgUmVncmVzc2lvbl0oLi9MaW5lYXIgUmVncmVzc2lvbi9MaW5lYXIgUmVncmVzc2lvbi5uYi5odG1sKQ0KDQotIGdsbW5ldD8NCg0KLSBFbnNlbWJsZXMgb2YgR2VuZXJhbGl6ZWQgTGllbmFyIE1vZGVscw0KDQojIyMjIFRpbWUgU2VyaWVzIEFuYWx5c2lzDQoNCi0gW1RpbWUgU2VyaWVzIEdlbmVyYWwgUGxvdHNdKC4vdGltZSBzZXJpZXMvdHNfcGxvdHMubmIuaHRtbCkNCg0KLSBbVGltZSBTZXJpZXMgVHJhaW5dKC4vdGltZSBzZXJpZXMvdHNfdHJhaW5zLm5iLmh0bWwpDQoNCiMjIyBDbGFzc2lmaWNhdGlvbg0KDQotIFtTVk1dKC4vc3ZtL3N2bS5uYi5odG1sKQ0KDQotIEFkYWJvb3N0DQoNCi0gQzUuMA0KDQotIGVYdHJlbWUgR3JhZGllbnQgQm9vc3RpbmcNCg0KLSBrLU5lYXJlc3QgTmVpZ2hib3JzDQoNCi0gW1JhbmRvbSBGb3Jlc3RdKC4vUmFuZG9tIEZvcmVzdC9SYW5kb20gZm9yZXN0Lm5iLmh0bWwpDQoNCiMjIFVuc3VwZXJ2aXNlZCBMZWFybmluZw0KDQotIFtLbWVhbnNdKC4va21lYW5zL2ttZWFucy5uYi5odG1sKQ0KDQotIFBDQQ0KDQoNCiMjIFBhcmFsbGVsIENvbXB1dGluZyBpbiBDYXJldCBwYWNrYWdlDQoNCklmIHRoZSBjb21wdXRhdGlvbiB0YWtlcyB0b28gbG9uZywgdXNlIHBhcmFsbGVsIGNvbXB1dGluZyBtYXkgc3BlZWQgdXAgeW91ciBhbGdvcml0aG0NCg0KLSBbUGFyYWxsZWwgQ29tcHV0aW5nIEV4YW1wbGVdKC4vcGFyYWxsZWwgY29tcHV0aW5nL3BhcmFsbGVsIGNvbXB1dGluZyBleGFtcGxlLm5iLmh0bWwpDQoNCg0KIyMgTGVhcm5pbmcgQ3VydmUNCg0KLSBbTGVhcm5pbmcgQ3VydmVdKC4vbGVhcm5pbmcgY3VydmUvTGVhcm5pbmcgQ3VydmUubmIuaHRtbCkNCg0KUmVmZXJlbmNlcw0KDQpbY2FyZXRdKGh0dHA6Ly90b3BlcG8uZ2l0aHViLmlvL2NhcmV0L2luZGV4Lmh0bWwpDQo=</div>
 
 
 

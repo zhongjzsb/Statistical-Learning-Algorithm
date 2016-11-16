@@ -1,0 +1,38 @@
+---
+title: "Linear Regression"
+author: Jingyu Bao
+date: 2016-11-15
+output: html_notebook
+---
+
+```{r}
+data(Sacramento)
+
+Sacramento %>% 
+    head(10)
+
+set.seed(100)
+trainIndex <- createDataPartition(Sacramento$price, p = .8, 
+                                  list = FALSE, 
+                                  times = 1)
+
+sacTrain <- Sacramento[trainIndex,]
+sacTest <- Sacramento[-trainIndex,]
+trainX <- sacTrain[c('beds', 'sqft', 'baths', 'latitude', 'longitude')]
+
+set.seed(1000)
+fitControl <- trainControl(## 5-fold CV
+                           method = "repeatedcv",
+                           number = 5,
+                           ## repeated two times
+                           repeats = 2)
+
+
+lmFit <- train(x = trainX, 
+               y = sacTrain$price,
+               method = "lm", 
+               metric = "RMSE",
+               trControl = fitControl)
+
+lmFit
+```

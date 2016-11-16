@@ -1,15 +1,15 @@
 {
     "collab_server" : "",
-    "contents" : "---\ntitle: \"Parallel Computing\"\nauthor: Jingyu Bao\ndate: 2016-11-15\noutput: html_notebook\n---\n\nUse the package 'doParallel'.\n\nUse the seeds function in trainControl function in caret package to make sure the algorithm can be reproduced exactly, even using parallel computing\n\nTo \n\n\n\nReferences\n\n[stackoverflow](http://stackoverflow.com/questions/13403427/fully-reproducible-parallel-models-using-caret)\n\n```{r}\nlibrary(doParallel)\n\n#create a list of seed, here change the seed for each resampling\nset.seed(123)\nseeds <- vector(mode = \"list\", length = 11)#length is = (n_repeats*nresampling)+1\nfor(i in 1:10) seeds[[i]]<- sample.int(n=1000, 3) #(3 is the number of tuning parameter, mtry for rf, here equal to ncol(iris)-2)\n\nseeds[[11]]<-sample.int(1000, 1)#for the last model\n\n #control list\n myControl <- trainControl(method='cv', seeds=seeds, index=createFolds(iris$Species))\n\n #run model in parallel\n cl <- makeCluster(detectCores())\n registerDoParallel(cl)\n model1 <- train(Species~., iris, method='rf', trControl=myControl)\n\n model2 <- train(Species~., iris, method='rf', trControl=myControl)\n stopCluster(cl)\n\n #compare\n all.equal(predict(model1, type='prob'), predict(model2, type='prob'))\n```",
+    "contents" : "---\ntitle: \"Parallel Computing\"\nauthor: Jingyu Bao\ndate: 2016-11-15\noutput: html_notebook\n---\n\nUse the package 'doParallel'.\n\nUse the seeds function in trainControl function in caret package to make sure the algorithm can be reproduced exactly, even using parallel computing.\n\nTo \n\n\n\nReferences\n\n[stackoverflow](http://stackoverflow.com/questions/13403427/fully-reproducible-parallel-models-using-caret)\n\n```{r}\nlibrary(doParallel)\n\n#create a list of seed, here change the seed for each resampling\nset.seed(123)\nseeds <- vector(mode = \"list\", length = 11)#length is = (n_repeats*nresampling)+1\nfor(i in 1:10) seeds[[i]]<- sample.int(n=1000, 3) #(3 is the number of tuning parameter, mtry for rf, here equal to ncol(iris)-2)\n\nseeds[[11]]<-sample.int(1000, 1)#for the last model\n\n #control list\n myControl <- trainControl(method='cv', seeds=seeds, index=createFolds(iris$Species))\n\n #run model in parallel\n cl <- makeCluster(detectCores())\n registerDoParallel(cl)\n model1 <- train(Species~., iris, method='rf', trControl=myControl)\n\n model2 <- train(Species~., iris, method='rf', trControl=myControl)\n stopCluster(cl)\n\n #compare\n all.equal(predict(model1, type='prob'), predict(model2, type='prob'))\n```",
     "created" : 1479229023366.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2276053526",
+    "hash" : "345921769",
     "id" : "8AB5D08C",
-    "lastKnownWriteTime" : 1479229025,
-    "last_content_update" : 1479229025771,
-    "path" : "C:/Users/zhong/Dropbox/Statistical Learning/Algorithms/parallel computing/parallel computing example.Rmd",
+    "lastKnownWriteTime" : 1479261754,
+    "last_content_update" : 1479261754284,
+    "path" : "C:/Users/zhong/Dropbox/Statistical Learning/Statistical-Learning-Algorithm/parallel computing/parallel computing example.Rmd",
     "project_path" : "parallel computing/parallel computing example.Rmd",
     "properties" : {
         "chunk_output_type" : "inline"

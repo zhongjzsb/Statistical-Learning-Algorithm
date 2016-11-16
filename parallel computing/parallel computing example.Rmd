@@ -7,7 +7,7 @@ output: html_notebook
 
 Use the package 'doParallel'.
 
-Use the seeds function in trainControl function in caret package to make sure the algorithm can be reproduced exactly, even using parallel computing
+Use the seeds function in trainControl function in caret package to make sure the algorithm can be reproduced exactly, even using parallel computing.
 
 To 
 

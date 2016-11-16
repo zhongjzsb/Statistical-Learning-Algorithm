@@ -1,0 +1,46 @@
+---
+title: "Random Forest"
+author: Jingyu Bao
+date: 2016-11-15
+output: html_notebook
+---
+
+
+```{r}
+data(segmentationData)
+
+segmentationData %>% 
+    head(10)
+
+set.seed(100)
+trainIndex <- createDataPartition(segmentationData$Class, p = .8, 
+                                  list = FALSE, 
+                                  times = 1)
+
+segTrain <- segmentationData[trainIndex,]
+segTest <- segmentationData[-trainIndex,]
+trainX <- segTrain[,4:61]
+
+set.seed(1000)
+fitControl <- trainControl(## 5-fold CV
+                           method = "repeatedcv",
+                           number = 5,
+                           ## repeated two times
+                           repeats = 2)
+
+rfFit <- train(x = trainX, 
+               y = segTrain$Class,
+               data = segTrain,
+               method = "rf", 
+               trControl = fitControl,
+               tuneLength = 10)
+
+rfFit
+```
+
+
+Choose the largest accuracy.
+```{r}
+ggplot(rfFit) + theme_bw()
+```
+

@@ -5,12 +5,12 @@ date: 2016-11-14
 output: html_notebook
 ---
 
+## Simple Usage
 
-The Class is y label.
+We use the segmentationData in __caret__ package. The Class is the predict variable (y label).
+
 
 ```{r}
-library(caret)
-
 data(segmentationData)
 
 segmentationData %>% 
@@ -36,10 +36,12 @@ svmFit <- train(x = trainX,
                 y = segTrain$Class,
                 data = segTrain,
                 method = "svmLinear", 
-                trControl = fitControl,
-                tuneLength = 15)
+                trControl = fitControl)
+
 svmFit
 ```
+
+C is the penalty parameter of the error term. In this linear kernel function case, C remains $1$.
 
 Predict/Test
 ```{r}

@@ -24,20 +24,50 @@ Try to learn the package of [caret](http://topepo.github.io/caret/index.html).
 
 - [General Caret Functions](./caret functions/Tuning Parameters.nb.html)
 
+Use getModelinfo() function to know the details.
+```{r}
+svmLinearInfo <- getModelInfo("svmLinear", regex = FALSE)
+svmLinearInfo[[1]] %>%
+    glimpse()
+```
+
+
 ## Supervised Learning
 
+### Regression
+
+- [Linear Regression](./Linear Regression/Linear Regression.nb.html)
+
+- glmnet?
+
+- Ensembles of Generalized Lienar Models
+
+#### Time Series Analysis
+
+- [Time Series General Plots](./time series/ts_plots.nb.html)
+
+- [Time Series Train](./time series/ts_trains.nb.html)
+
+### Classification
+
 - [SVM](./svm/svm.nb.html)
+
+- Adaboost
+
+- C5.0
+
+- eXtreme Gradient Boosting
+
+- k-Nearest Neighbors
+
+- [Random Forest](./Random Forest/Random forest.nb.html)
 
 ## Unsupervised Learning
 
 - [Kmeans](./kmeans/kmeans.nb.html)
 
+- PCA
 
-## Time Series Analysis
-
-- [Time Series General Plots](./time series/ts_plots.nb.html)
-
-- [Time Series Train](./time series/ts_trains.nb.html)
 
 ## Parallel Computing in Caret package
 
