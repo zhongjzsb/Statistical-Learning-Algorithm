@@ -1,0 +1,64 @@
+---
+title: "Neural Network"
+author: Jingyu Bao
+date: 2016-11-16
+output: html_notebook
+---
+
+Look at [here](http://datascienceplus.com/fitting-neural-network-in-r/)
+
+```{r}
+data(segmentationData)
+
+getModelInfo("nnet")
+
+segmentationData %>% 
+    head(10)
+
+set.seed(100)
+trainIndex <- createDataPartition(segmentationData$Class, p = .8, 
+                                  list = FALSE, 
+                                  times = 1)
+
+segTrain <- segmentationData[trainIndex,]
+segTest <- segmentationData[-trainIndex,]
+trainX <- segTrain[,3:61]
+
+set.seed(1000)
+fitControl <- trainControl(## 10-fold CV
+                           method = "repeatedcv",
+                           number = 10,
+                           ## repeated five times
+                           repeats = 5)
+
+my.grid <- expand.grid(.decay = c(0.5, 0.1), .size = c(5, 6, 7))
+neuralFit <- train(Class~PerimCh1,
+                   data = trainX,
+                   method = "nnet", 
+                   trControl = fitControl,
+                   tuneGrid = my.grid,
+                   trace = F,
+                   maxit = 100)
+
+neuralFit
+```
+
+
+
+
+
+```{r}
+results1 <- predict(neuralFit, newdata = segTest)
+conf1 <- confusionMatrix(results1, segTest$Class)
+
+results2 <- predict(neuralFit, newdata = segTest)
+conf2 <- confusionMatrix(results2, segTest$Class)
+
+probs <- predict(neuralFit, newdata = segTest, type='prob')
+
+# Assemble output format: ID, prob.
+output <- data.frame(Class = segTest$Class)
+output <- cbind(output, TARGET = probs$PS)
+output
+```
+

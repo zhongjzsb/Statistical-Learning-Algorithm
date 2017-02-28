@@ -1,3 +1,5 @@
+cat("Welcome to Statistical Learning Algorithm!\n")
+
 library(xgboost)
 library(readr)
 library(stringr)

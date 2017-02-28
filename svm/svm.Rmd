@@ -2,8 +2,19 @@
 title: "Support Vector Machine"
 author: Jingyu Bao
 date: 2016-11-14
-output: html_notebook
+output: 
+    html_notebook:
+        theme: united
+        highlight: tango
+        css: faded.css
+        toc: true
+        self_contained: no
 ---
+
+## R Notebook YAML code
+
+[here](https://github.com/rstudio/rmarkdown/tree/gh-pages) and 
+[here](http://rmarkdown.rstudio.com/html_document_format.html)
 
 ## Simple Usage
 
@@ -39,6 +50,8 @@ svmFit <- train(x = trainX,
                 trControl = fitControl)
 
 svmFit
+
+svmFit$finalModel
 ```
 
 C is the penalty parameter of the error term. In this linear kernel function case, C remains $1$.
@@ -65,7 +78,26 @@ For Kappa statistic, from [here](http://stats.stackexchange.com/questions/82162/
 > There is not a standardized interpretation of the kappa statistic. According to Wikipedia (citing their paper), Landis and Koch considers 0-0.20 as slight, 0.21-0.40 as fair, 0.41-0.60 as moderate, 0.61-0.80 as substantial, and 0.81-1 as almost perfect. Fleiss considers kappas > 0.75 as excellent, 0.40-0.75 as fair to good, and < 0.40 as poor.
 
 
-Visualization
+## Next Step (Theory)
+
+The RBF kernel 
+$$
+K(x,y) = \exp \Big(\frac{||x-y||^2}{\gamma}\Big) = \exp(||x||^2/\gamma)\exp(||y||^2/\gamma) \sum_{j = 0}^{\infty} \frac{(-2x\cdot y)^j}{\gamma^j j!}
+$$
+is a similarity measure which project the variables into infinity space $\mathbb{R}^{\infty}$.
+
+from [here](./svm guide.pdf)
+
+> In general, the RBF kernel is a reasonable first choice. This kernel nonlinearly maps
+samples into a higher dimensional space so it, unlike the linear kernel, can handle the
+case when the relation between class labels and attributes is nonlinear. Furthermore,
+the linear kernel is a special case of RBF
+
+> If the number of features is large, one may not need to map data to a higher dimensional
+space. That is, the nonlinear mapping does not improve the performance.
+Using the linear kernel is good enough, and one only searches for the parameter C.
+
+## Visualization
 
 ```{r}
 library(e1071)

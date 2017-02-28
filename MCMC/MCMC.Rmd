@@ -1,0 +1,21 @@
+---
+title: "MCMC"
+author: Jingyu Bao
+date: 2016-11-17
+output: html_notebook
+---
+
+Construct a distribution as a stationary probability distribution of Markov Chain.
+Want to find the stationary probability distribution of Markov Chain.
+
+Reference
+
+[here](https://nicercode.github.io/guides/mcmc/)
+
+and
+
+[here](https://theoreticalecology.wordpress.com/2010/09/17/metropolis-hastings-mcmc-in-r/)
+
+and
+
+[slides](./MartinQuinnMCMCpackslides.pdf)

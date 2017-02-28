@@ -12,6 +12,14 @@ Use the seeds function in trainControl function in caret package to make sure th
 To 
 
 
+```{r}
+library(doMC)
+registerDoMC(cores = 5)
+## All subsequent models are then run in parallel
+model <- train(y ~ ., data = data.frame(x = rnorm(10), y = rnorm(10)), method = "rf", mtry = 1)
+```
+
+
 
 References
 

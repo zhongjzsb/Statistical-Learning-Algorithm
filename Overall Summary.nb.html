@@ -72,6 +72,7 @@ h6 {
 }
 </style>
 
+<link href="data:text/css;charset=utf-8,h1%7B%0Acolor%3A%20white%3B%0Apadding%3A%2010px%3B%0Abackground%2Dcolor%3A%20%233399ff%0A%7D%0Aul%20%7B%0Alist%2Dstyle%2Dtype%3A%20square%3B%0A%7D%0A%2EMathJax%5FDisplay%20%7B%0Apadding%3A%200%2E5em%3B%0Abackground%2Dcolor%3A%20%23eaeff3%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -181,14 +182,7 @@ $(document).ready(function () {
 <p>To modify the automatic-load libraries, change in <a href="./.Rprofile">.Rprofile</a>.</p>
 <div id="data" class="section level2">
 <h2>Data</h2>
-<p>To see which data are avilable in R.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSgpXG5gYGAifQ== -->
-<pre class="r"><code>data()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
+<p>To see which data are avilable in R by “data()”.</p>
 <p>More data can be found in package mlbench</p>
 </div>
 <div id="r-packages-for-machine-learning" class="section level2">
@@ -198,47 +192,17 @@ $(document).ready(function () {
 <li><a href="./caret%20functions/Tuning%20Parameters.nb.html">General Caret Functions</a></li>
 </ul>
 <p>Use getModelinfo() function to know the details.</p>
+<p>Good Reference <a href="./user_caret_2up.pdf">pdf</a></p>
+<p><a id="svmLinearInfo"></a></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3ZtTGluZWFySW5mb1tbMV1dICU+JVxuICAgIGdsaW1wc2UoKVxuXG5gYGAifQ== -->
-<pre class="r"><code>svmLinearInfo[[1]] %&gt;%
-    glimpse()
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTGlzdCBvZiAxM1xuICQgbGFiZWwgICAgIDogY2hyIFwiU3VwcG9ydCBWZWN0b3IgTWFjaGluZXMgd2l0aCBMaW5lYXIgS2VybmVsXCJcbiAkIGxpYnJhcnkgICA6IGNociBcImtlcm5sYWJcIlxuICQgdHlwZSAgICAgIDogY2hyIFsxOjJdIFwiUmVncmVzc2lvblwiIFwiQ2xhc3NpZmljYXRpb25cIlxuICQgcGFyYW1ldGVyczonZGF0YS5mcmFtZSc6XHQxIG9icy4gb2YgIDMgdmFyaWFibGVzOlxuICAuLiQgcGFyYW1ldGVyOiBGYWN0b3Igdy8gMSBsZXZlbCBcIkNcIjogMVxuICAuLiQgY2xhc3MgICAgOiBGYWN0b3Igdy8gMSBsZXZlbCBcIm51bWVyaWNcIjogMVxuICAuLiQgbGFiZWwgICAgOiBGYWN0b3Igdy8gMSBsZXZlbCBcIkNvc3RcIjogMVxuICQgZ3JpZCAgICAgIDpmdW5jdGlvbiAoeCwgeSwgbGVuID0gTlVMTCwgc2VhcmNoID0gXCJncmlkXCIpICBcbiAgLi4tIGF0dHIoKiwgXCJzcmNyZWZcIik9Q2xhc3MgJ3NyY3JlZicgIGF0b21pYyBbMTo4XSA3IDI2IDE0IDE5IDI2IDE5IDcgMTRcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAkIGxvb3AgICAgICA6IE5VTExcbiAkIGZpdCAgICAgICA6ZnVuY3Rpb24gKHgsIHksIHd0cywgcGFyYW0sIGxldiwgbGFzdCwgY2xhc3NQcm9icywgLi4uKSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gMTYgMjUgMjkgMTkgMjUgMTkgMTYgMjlcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAkIHByZWRpY3QgICA6ZnVuY3Rpb24gKG1vZGVsRml0LCBuZXdkYXRhLCBzdWJtb2RlbHMgPSBOVUxMKSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gMzAgMjkgNTUgMTkgMjkgMTkgMzAgNTVcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAkIHByb2IgICAgICA6ZnVuY3Rpb24gKG1vZGVsRml0LCBuZXdkYXRhLCBzdWJtb2RlbHMgPSBOVUxMKSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gNTYgMjYgNzUgMTkgMjYgMTkgNTYgNzVcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiAgLi4tIGF0dHIoKiwgXCJzcmNyZWZcIik9Q2xhc3MgJ3NyY3JlZicgIGF0b21pYyBbMTo4XSA3NiAzMiA4NSAxOSAzMiAxOSA3NiA4NVxuICAuLiAuLiAuLi0gYXR0cigqLCBcInNyY2ZpbGVcIik9Q2xhc3NlcyAnc3JjZmlsZWNvcHknLCAnc3JjZmlsZScgPGVudmlyb25tZW50OiAweDAwMDAwMDAwMDM1Zjg1MTg+IFxuICQgdGFncyAgICAgIDogY2hyIFsxOjVdIFwiS2VybmVsIE1ldGhvZFwiIFwiU3VwcG9ydCBWZWN0b3IgTWFjaGluZXNcIiBcIkxpbmVhciBSZWdyZXNzaW9uXCIgXCJMaW5lYXIgQ2xhc3NpZmllclwiIC4uLlxuICQgbGV2ZWxzICAgIDpmdW5jdGlvbiAoeCkgIFxuICAuLi0gYXR0cigqLCBcInNyY3JlZlwiKT1DbGFzcyAnc3JjcmVmJyAgYXRvbWljIFsxOjhdIDg4IDI4IDg4IDQ1IDI4IDQ1IDg4IDg4XG4gIC4uIC4uIC4uLSBhdHRyKCosIFwic3JjZmlsZVwiKT1DbGFzc2VzICdzcmNmaWxlY29weScsICdzcmNmaWxlJyA8ZW52aXJvbm1lbnQ6IDB4MDAwMDAwMDAwMzVmODUxOD4gXG4gJCBzb3J0ICAgICAgOmZ1bmN0aW9uICh4KSAgXG4gIC4uLSBhdHRyKCosIFwic3JjcmVmXCIpPUNsYXNzICdzcmNyZWYnICBhdG9taWMgWzE6OF0gODkgMjYgOTQgMTkgMjYgMTkgODkgOTRcbiAgLi4gLi4gLi4tIGF0dHIoKiwgXCJzcmNmaWxlXCIpPUNsYXNzZXMgJ3NyY2ZpbGVjb3B5JywgJ3NyY2ZpbGUnIDxlbnZpcm9ubWVudDogMHgwMDAwMDAwMDAzNWY4NTE4PiBcbiJ9 -->
-<pre><code>List of 13
- $ label     : chr &quot;Support Vector Machines with Linear Kernel&quot;
- $ library   : chr &quot;kernlab&quot;
- $ type      : chr [1:2] &quot;Regression&quot; &quot;Classification&quot;
- $ parameters:'data.frame': 1 obs. of  3 variables:
-  ..$ parameter: Factor w/ 1 level &quot;C&quot;: 1
-  ..$ class    : Factor w/ 1 level &quot;numeric&quot;: 1
-  ..$ label    : Factor w/ 1 level &quot;Cost&quot;: 1
- $ grid      :function (x, y, len = NULL, search = &quot;grid&quot;)  
-  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 7 26 14 19 26 19 7 14
-  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
- $ loop      : NULL
- $ fit       :function (x, y, wts, param, lev, last, classProbs, ...)  
-  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 16 25 29 19 25 19 16 29
-  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
- $ predict   :function (modelFit, newdata, submodels = NULL)  
-  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 30 29 55 19 29 19 30 55
-  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
- $ prob      :function (modelFit, newdata, submodels = NULL)  
-  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 56 26 75 19 26 19 56 75
-  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
-  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 76 32 85 19 32 19 76 85
-  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
- $ tags      : chr [1:5] &quot;Kernel Method&quot; &quot;Support Vector Machines&quot; &quot;Linear Regression&quot; &quot;Linear Classifier&quot; ...
- $ levels    :function (x)  
-  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 88 28 88 45 28 45 88 88
-  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; 
- $ sort      :function (x)  
-  ..- attr(*, &quot;srcref&quot;)=Class 'srcref'  atomic [1:8] 89 26 94 19 26 19 89 94
-  .. .. ..- attr(*, &quot;srcfile&quot;)=Classes 'srcfilecopy', 'srcfile' &lt;environment: 0x00000000035f8518&gt; </code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>use the referenced chunk <a href="#svmLinearInfo">this code chunk</a></p>
+</div>
+<div id="bias-variance-trade-off" class="section level2">
+<h2>Bias-Variance Trade-off</h2>
+<p><a href="http://scott.fortmann-roe.com/docs/BiasVariance.html">here</a></p>
 </div>
 <div id="supervised-learning" class="section level2">
 <h2>Supervised Learning</h2>
@@ -266,6 +230,7 @@ $(document).ready(function () {
 <li><p>eXtreme Gradient Boosting</p></li>
 <li><p>k-Nearest Neighbors</p></li>
 <li><p><a href="./Random%20Forest/Random%20forest.nb.html">Random Forest</a></p></li>
+<li><p><a href="./neural%20network/neural%20network.nb.html">neural network</a></p></li>
 </ul>
 </div>
 </div>
@@ -288,12 +253,50 @@ $(document).ready(function () {
 <ul>
 <li><a href="./learning%20curve/Learning%20Curve.nb.html">Learning Curve</a></li>
 </ul>
-<p>References</p>
+</div>
+<div id="other-useful-algorithm" class="section level2">
+<h2>Other Useful Algorithm</h2>
+<ul>
+<li><p><a href="./EM%20algorithm/EM%20algorithm.nb.html">EM Algorithm</a></p></li>
+<li><p><a href="./MCMC/MCMC.nb.html">MCMC</a></p></li>
+</ul>
+</div>
+<div id="to-avoid-overfitting" class="section level2">
+<h2>To Avoid Overfitting</h2>
+<ul>
+<li><a href="./Overfitting/overfitting.nb.html">Overfitting</a></li>
+</ul>
+</div>
+<div id="missing-data" class="section level2">
+<h2>Missing data</h2>
+<p>From book “statistics in a nutshell”.</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Make an extra effort to collect the missing data by following up with the source, which solves the problem by making the missing data no longer missing.</li>
+<li>Consider a different analytical design, such as a multilevel model rather than a classic repeated-measures model.</li>
+<li>Impute values for the missing data using maximum likelihood methods such as those available in the SPSS MVA module, or use multiple imputation in SAS PROC MI to generate a distribution for the missing value and select a value for each missing case.</li>
+<li>Include a dummy (0, 1) variable in your analysis that indicates that data was missing, along with an imputed value replacing the missing data.</li>
+<li>Drop the cases or variables with large amounts of missing data from the anal- ysis (only feasible if the problem is confined to a small percentage of cases and/or variables that are not central to your analysis, and may introduce bias if the data is not MCAR).</li>
+<li>Conditional imputation: use available values to impute missing values (not recommended, as it may result in an underestimate of variance).</li>
+<li>Simple imputation: substitute a value such as the population mean for the missing value (not recommended, as it nearly always results in an extreme underestimate of variance)</li>
+</ol>
+</blockquote>
+</div>
+<div id="visualization" class="section level2">
+<h2>Visualization</h2>
+<p>A nice <a href="http://www.htmlwidgets.org">htmlwidget website</a> for javascript plot in R.</p>
+</div>
+<div id="r-presentation" class="section level2">
+<h2>R presentation</h2>
+<p>From Yihui Xie’s <a href="https://slides.yihui.name/xaringan/#1">blog</a></p>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
 <p><a href="http://topepo.github.io/caret/index.html">caret</a></p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIk1hY2hpbmUgTGVhcm5pbmcgQWxnb3JpdGhtcyBTdW1tYXJ5Ig0KYXV0aG9yOiBKaW5neXUgQmFvDQpkYXRlOiAyMDE2LTExLTE0DQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNClRoaXMgW0ZvbGRlcl0oLi8pIGNvbnRhaW5zIGFsbCB0aGUgYWxnb3JpdGhtIG5vdGVib29rcy4NCg0KVG8gbW9kaWZ5IHRoZSBhdXRvbWF0aWMtbG9hZCBsaWJyYXJpZXMsIGNoYW5nZSBpbiBbLlJwcm9maWxlXSguLy5ScHJvZmlsZSkuDQoNCiMjIERhdGENCg0KVG8gc2VlIHdoaWNoIGRhdGEgYXJlIGF2aWxhYmxlIGluIFIuDQpgYGB7cn0NCmRhdGEoKQ0KYGBgDQpNb3JlIGRhdGEgY2FuIGJlIGZvdW5kIGluIHBhY2thZ2UgbWxiZW5jaA0KDQoNCiMjIFIgcGFja2FnZXMgZm9yIE1hY2hpbmUgTGVhcm5pbmcNClRyeSB0byBsZWFybiB0aGUgcGFja2FnZSBvZiBbY2FyZXRdKGh0dHA6Ly90b3BlcG8uZ2l0aHViLmlvL2NhcmV0L2luZGV4Lmh0bWwpLg0KDQotIFtHZW5lcmFsIENhcmV0IEZ1bmN0aW9uc10oLi9jYXJldCBmdW5jdGlvbnMvVHVuaW5nIFBhcmFtZXRlcnMubmIuaHRtbCkNCg0KVXNlIGdldE1vZGVsaW5mbygpIGZ1bmN0aW9uIHRvIGtub3cgdGhlIGRldGFpbHMuDQpgYGB7cn0NCnN2bUxpbmVhckluZm8gPC0gZ2V0TW9kZWxJbmZvKCJzdm1MaW5lYXIiLCByZWdleCA9IEZBTFNFKQ0Kc3ZtTGluZWFySW5mb1tbMV1dICU+JQ0KICAgIGdsaW1wc2UoKQ0KYGBgDQoNCg0KIyMgU3VwZXJ2aXNlZCBMZWFybmluZw0KDQojIyMgUmVncmVzc2lvbg0KDQotIFtMaW5lYXIgUmVncmVzc2lvbl0oLi9MaW5lYXIgUmVncmVzc2lvbi9MaW5lYXIgUmVncmVzc2lvbi5uYi5odG1sKQ0KDQotIGdsbW5ldD8NCg0KLSBFbnNlbWJsZXMgb2YgR2VuZXJhbGl6ZWQgTGllbmFyIE1vZGVscw0KDQojIyMjIFRpbWUgU2VyaWVzIEFuYWx5c2lzDQoNCi0gW1RpbWUgU2VyaWVzIEdlbmVyYWwgUGxvdHNdKC4vdGltZSBzZXJpZXMvdHNfcGxvdHMubmIuaHRtbCkNCg0KLSBbVGltZSBTZXJpZXMgVHJhaW5dKC4vdGltZSBzZXJpZXMvdHNfdHJhaW5zLm5iLmh0bWwpDQoNCiMjIyBDbGFzc2lmaWNhdGlvbg0KDQotIFtTVk1dKC4vc3ZtL3N2bS5uYi5odG1sKQ0KDQotIEFkYWJvb3N0DQoNCi0gQzUuMA0KDQotIGVYdHJlbWUgR3JhZGllbnQgQm9vc3RpbmcNCg0KLSBrLU5lYXJlc3QgTmVpZ2hib3JzDQoNCi0gW1JhbmRvbSBGb3Jlc3RdKC4vUmFuZG9tIEZvcmVzdC9SYW5kb20gZm9yZXN0Lm5iLmh0bWwpDQoNCiMjIFVuc3VwZXJ2aXNlZCBMZWFybmluZw0KDQotIFtLbWVhbnNdKC4va21lYW5zL2ttZWFucy5uYi5odG1sKQ0KDQotIFBDQQ0KDQoNCiMjIFBhcmFsbGVsIENvbXB1dGluZyBpbiBDYXJldCBwYWNrYWdlDQoNCklmIHRoZSBjb21wdXRhdGlvbiB0YWtlcyB0b28gbG9uZywgdXNlIHBhcmFsbGVsIGNvbXB1dGluZyBtYXkgc3BlZWQgdXAgeW91ciBhbGdvcml0aG0NCg0KLSBbUGFyYWxsZWwgQ29tcHV0aW5nIEV4YW1wbGVdKC4vcGFyYWxsZWwgY29tcHV0aW5nL3BhcmFsbGVsIGNvbXB1dGluZyBleGFtcGxlLm5iLmh0bWwpDQoNCg0KIyMgTGVhcm5pbmcgQ3VydmUNCg0KLSBbTGVhcm5pbmcgQ3VydmVdKC4vbGVhcm5pbmcgY3VydmUvTGVhcm5pbmcgQ3VydmUubmIuaHRtbCkNCg0KUmVmZXJlbmNlcw0KDQpbY2FyZXRdKGh0dHA6Ly90b3BlcG8uZ2l0aHViLmlvL2NhcmV0L2luZGV4Lmh0bWwpDQo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFjaGluZSBMZWFybmluZyBBbGdvcml0aG1zIFN1bW1hcnkiCmF1dGhvcjogSmluZ3l1IEJhbwpkYXRlOiAyMDE2LTExLTE0Cm91dHB1dDogCiAgaHRtbF9ub3RlYm9vazoKICAgIGNzczogZmFkZWQuY3NzCi0tLQoKClRoaXMgW0ZvbGRlcl0oLi8pIGNvbnRhaW5zIGFsbCB0aGUgYWxnb3JpdGhtIG5vdGVib29rcy4KClRvIG1vZGlmeSB0aGUgYXV0b21hdGljLWxvYWQgbGlicmFyaWVzLCBjaGFuZ2UgaW4gWy5ScHJvZmlsZV0oLi8uUnByb2ZpbGUpLgoKIyMgRGF0YQoKVG8gc2VlIHdoaWNoIGRhdGEgYXJlIGF2aWxhYmxlIGluIFIgYnkgImRhdGEoKSIuCgpNb3JlIGRhdGEgY2FuIGJlIGZvdW5kIGluIHBhY2thZ2UgbWxiZW5jaAoKCiMjIFIgcGFja2FnZXMgZm9yIE1hY2hpbmUgTGVhcm5pbmcKClRyeSB0byBsZWFybiB0aGUgcGFja2FnZSBvZiBbY2FyZXRdKGh0dHA6Ly90b3BlcG8uZ2l0aHViLmlvL2NhcmV0L2luZGV4Lmh0bWwpLgoKLSBbR2VuZXJhbCBDYXJldCBGdW5jdGlvbnNdKC4vY2FyZXQgZnVuY3Rpb25zL1R1bmluZyBQYXJhbWV0ZXJzLm5iLmh0bWwpCgpVc2UgZ2V0TW9kZWxpbmZvKCkgZnVuY3Rpb24gdG8ga25vdyB0aGUgZGV0YWlscy4KCkdvb2QgUmVmZXJlbmNlIFtwZGZdKC4vdXNlcl9jYXJldF8ydXAucGRmKQoKPGEgaWQ9InN2bUxpbmVhckluZm8iPjwvYT4KYGBge3Igc3ZtTGluZWFySW5mbywgZmlnLmNhcD0ibXRjYXJzIHBsb3QifQpzdm1MaW5lYXJJbmZvIDwtIGdldE1vZGVsSW5mbygic3ZtTGluZWFyIiwgcmVnZXggPSBGQUxTRSkKc3ZtTGluZWFySW5mb1tbMV1dICU+JQogICAgZ2xpbXBzZSgpCgpwbG90KG10Y2FycykKYGBgCgp1c2UgdGhlIHJlZmVyZW5jZWQgY2h1bmsgW3RoaXMgY29kZSBjaHVua10oI3N2bUxpbmVhckluZm8pCgojIyBCaWFzLVZhcmlhbmNlIFRyYWRlLW9mZgoKW2hlcmVdKGh0dHA6Ly9zY290dC5mb3J0bWFubi1yb2UuY29tL2RvY3MvQmlhc1ZhcmlhbmNlLmh0bWwpCgoKIyMgU3VwZXJ2aXNlZCBMZWFybmluZwoKIyMjIFJlZ3Jlc3Npb24KCi0gW0xpbmVhciBSZWdyZXNzaW9uXSguL0xpbmVhciBSZWdyZXNzaW9uL0xpbmVhciBSZWdyZXNzaW9uLm5iLmh0bWwpCgotIGdsbW5ldD8KCi0gRW5zZW1ibGVzIG9mIEdlbmVyYWxpemVkIExpZW5hciBNb2RlbHMKCiMjIyMgVGltZSBTZXJpZXMgQW5hbHlzaXMKCi0gW1RpbWUgU2VyaWVzIEdlbmVyYWwgUGxvdHNdKC4vdGltZSBzZXJpZXMvdHNfcGxvdHMubmIuaHRtbCkKCi0gW1RpbWUgU2VyaWVzIFRyYWluXSguL3RpbWUgc2VyaWVzL3RzX3RyYWlucy5uYi5odG1sKQoKIyMjIENsYXNzaWZpY2F0aW9uCgotIFtTVk1dKC4vc3ZtL3N2bS5uYi5odG1sKQoKLSBBZGFib29zdAoKLSBDNS4wCgotIGVYdHJlbWUgR3JhZGllbnQgQm9vc3RpbmcKCi0gay1OZWFyZXN0IE5laWdoYm9ycwoKLSBbUmFuZG9tIEZvcmVzdF0oLi9SYW5kb20gRm9yZXN0L1JhbmRvbSBmb3Jlc3QubmIuaHRtbCkKCi0gW25ldXJhbCBuZXR3b3JrXSguL25ldXJhbCBuZXR3b3JrL25ldXJhbCBuZXR3b3JrLm5iLmh0bWwpCgojIyBVbnN1cGVydmlzZWQgTGVhcm5pbmcKCi0gW0ttZWFuc10oLi9rbWVhbnMva21lYW5zLm5iLmh0bWwpCgotIFBDQQoKCiMjIFBhcmFsbGVsIENvbXB1dGluZyBpbiBDYXJldCBwYWNrYWdlCgpJZiB0aGUgY29tcHV0YXRpb24gdGFrZXMgdG9vIGxvbmcsIHVzZSBwYXJhbGxlbCBjb21wdXRpbmcgbWF5IHNwZWVkIHVwIHlvdXIgYWxnb3JpdGhtCgotIFtQYXJhbGxlbCBDb21wdXRpbmcgRXhhbXBsZV0oLi9wYXJhbGxlbCBjb21wdXRpbmcvcGFyYWxsZWwgY29tcHV0aW5nIGV4YW1wbGUubmIuaHRtbCkKCgojIyBMZWFybmluZyBDdXJ2ZQoKLSBbTGVhcm5pbmcgQ3VydmVdKC4vbGVhcm5pbmcgY3VydmUvTGVhcm5pbmcgQ3VydmUubmIuaHRtbCkKCiMjIE90aGVyIFVzZWZ1bCBBbGdvcml0aG0KCi0gW0VNIEFsZ29yaXRobV0oLi9FTSBhbGdvcml0aG0vRU0gYWxnb3JpdGhtLm5iLmh0bWwpCgotIFtNQ01DXSguL01DTUMvTUNNQy5uYi5odG1sKQoKIyMgVG8gQXZvaWQgT3ZlcmZpdHRpbmcKCi0gW092ZXJmaXR0aW5nXSguL092ZXJmaXR0aW5nL292ZXJmaXR0aW5nLm5iLmh0bWwpCgojIyBNaXNzaW5nIGRhdGEgCgpGcm9tIGJvb2sgInN0YXRpc3RpY3MgaW4gYSBudXRzaGVsbCIuCgo+IDEuIE1ha2UgYW4gZXh0cmEgZWZmb3J0IHRvIGNvbGxlY3QgdGhlIG1pc3NpbmcgZGF0YSBieSBmb2xsb3dpbmcgdXAgd2l0aCB0aGUKc291cmNlLCB3aGljaCBzb2x2ZXMgdGhlIHByb2JsZW0gYnkgbWFraW5nIHRoZSBtaXNzaW5nIGRhdGEgbm8gbG9uZ2VyCm1pc3NpbmcuCjIuIENvbnNpZGVyIGEgZGlmZmVyZW50IGFuYWx5dGljYWwgZGVzaWduLCBzdWNoIGFzIGEgbXVsdGlsZXZlbCBtb2RlbCByYXRoZXIgdGhhbgphIGNsYXNzaWMgcmVwZWF0ZWQtbWVhc3VyZXMgbW9kZWwuCjMuIEltcHV0ZSB2YWx1ZXMgZm9yIHRoZSBtaXNzaW5nIGRhdGEgdXNpbmcgbWF4aW11bSBsaWtlbGlob29kIG1ldGhvZHMgc3VjaAphcyB0aG9zZSBhdmFpbGFibGUgaW4gdGhlIFNQU1MgTVZBIG1vZHVsZSwgb3IgdXNlIG11bHRpcGxlIGltcHV0YXRpb24gaW4KU0FTIFBST0MgTUkgdG8gZ2VuZXJhdGUgYSBkaXN0cmlidXRpb24gZm9yIHRoZSBtaXNzaW5nIHZhbHVlIGFuZCBzZWxlY3QgYQp2YWx1ZSBmb3IgZWFjaCBtaXNzaW5nIGNhc2UuCjQuIEluY2x1ZGUgYSBkdW1teSAoMCwgMSkgdmFyaWFibGUgaW4geW91ciBhbmFseXNpcyB0aGF0IGluZGljYXRlcyB0aGF0IGRhdGEgd2FzCm1pc3NpbmcsIGFsb25nIHdpdGggYW4gaW1wdXRlZCB2YWx1ZSByZXBsYWNpbmcgdGhlIG1pc3NpbmcgZGF0YS4KNS4gRHJvcCB0aGUgY2FzZXMgb3IgdmFyaWFibGVzIHdpdGggbGFyZ2UgYW1vdW50cyBvZiBtaXNzaW5nIGRhdGEgZnJvbSB0aGUgYW5hbC0KeXNpcyAob25seSBmZWFzaWJsZSBpZiB0aGUgcHJvYmxlbSBpcyBjb25maW5lZCB0byBhIHNtYWxsIHBlcmNlbnRhZ2Ugb2YgY2FzZXMKYW5kL29yIHZhcmlhYmxlcyB0aGF0IGFyZSBub3QgY2VudHJhbCB0byB5b3VyIGFuYWx5c2lzLCBhbmQgbWF5IGludHJvZHVjZSBiaWFzCmlmIHRoZSBkYXRhIGlzIG5vdCBNQ0FSKS4KNi4gQ29uZGl0aW9uYWwgaW1wdXRhdGlvbjogdXNlIGF2YWlsYWJsZSB2YWx1ZXMgdG8gaW1wdXRlIG1pc3NpbmcgdmFsdWVzIChub3QKcmVjb21tZW5kZWQsIGFzIGl0IG1heSByZXN1bHQgaW4gYW4gdW5kZXJlc3RpbWF0ZSBvZiB2YXJpYW5jZSkuCjcuIFNpbXBsZSBpbXB1dGF0aW9uOiBzdWJzdGl0dXRlIGEgdmFsdWUgc3VjaCBhcyB0aGUgcG9wdWxhdGlvbiBtZWFuIGZvciB0aGUKbWlzc2luZyB2YWx1ZSAobm90IHJlY29tbWVuZGVkLCBhcyBpdCBuZWFybHkgYWx3YXlzIHJlc3VsdHMgaW4gYW4gZXh0cmVtZSB1bmRlcmVzdGltYXRlIG9mIHZhcmlhbmNlKQoKIyMgVmlzdWFsaXphdGlvbgoKQSBuaWNlIFtodG1sd2lkZ2V0IHdlYnNpdGVdKGh0dHA6Ly93d3cuaHRtbHdpZGdldHMub3JnKSBmb3IgamF2YXNjcmlwdCBwbG90IGluIFIuCgojIyBSIHByZXNlbnRhdGlvbgoKRnJvbSBZaWh1aSBYaWUncyBbYmxvZ10oaHR0cHM6Ly9zbGlkZXMueWlodWkubmFtZS94YXJpbmdhbi8jMSkKCiMjIFJlZmVyZW5jZXMKCltjYXJldF0oaHR0cDovL3RvcGVwby5naXRodWIuaW8vY2FyZXQvaW5kZXguaHRtbCkK</div>
 
 
 

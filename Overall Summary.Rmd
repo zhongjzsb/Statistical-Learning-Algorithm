@@ -2,7 +2,19 @@
 title: "Machine Learning Algorithms Summary"
 author: Jingyu Bao
 date: 2016-11-14
-output: html_notebook
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    code_folding: show
+    df_print: paged
+    fig_caption: yes
+    fig_height: 7
+    fig_width: 10
+    highlight: pygments
+    number_sections: yes
+    theme: readable
+    toc: yes
 ---
 
 
@@ -12,24 +24,35 @@ To modify the automatic-load libraries, change in [.Rprofile](./.Rprofile).
 
 ## Data
 
-To see which data are avilable in R.
-```{r}
-data()
-```
+To see which data are avilable in R by "data()".
+
 More data can be found in package mlbench
 
 
 ## R packages for Machine Learning
+
 Try to learn the package of [caret](http://topepo.github.io/caret/index.html).
 
 - [General Caret Functions](./caret functions/Tuning Parameters.nb.html)
 
 Use getModelinfo() function to know the details.
-```{r}
+
+Good Reference [pdf](./user_caret_2up.pdf)
+
+<a id="svmLinearInfo"></a>
+```{r svmLinearInfo, fig.cap="mtcars plot"}
 svmLinearInfo <- getModelInfo("svmLinear", regex = FALSE)
 svmLinearInfo[[1]] %>%
     glimpse()
+
+plot(mtcars)
 ```
+
+use the referenced chunk [this code chunk](#svmLinearInfo)
+
+## Bias-Variance Trade-off
+
+[here](http://scott.fortmann-roe.com/docs/BiasVariance.html)
 
 
 ## Supervised Learning
@@ -62,6 +85,8 @@ svmLinearInfo[[1]] %>%
 
 - [Random Forest](./Random Forest/Random forest.nb.html)
 
+- [neural network](./neural network/neural network.nb.html)
+
 ## Unsupervised Learning
 
 - [Kmeans](./kmeans/kmeans.nb.html)
@@ -80,6 +105,54 @@ If the computation takes too long, use parallel computing may speed up your algo
 
 - [Learning Curve](./learning curve/Learning Curve.nb.html)
 
-References
+## Other Useful Algorithm
+
+- [EM Algorithm](./EM algorithm/EM algorithm.nb.html)
+
+- [MCMC](./MCMC/MCMC.nb.html)
+
+## To Avoid Overfitting
+
+- [Overfitting](./Overfitting/overfitting.nb.html)
+
+## Missing data 
+
+From book "statistics in a nutshell".
+
+> 1. Make an extra effort to collect the missing data by following up with the
+source, which solves the problem by making the missing data no longer
+missing.
+2. Consider a different analytical design, such as a multilevel model rather than
+a classic repeated-measures model.
+3. Impute values for the missing data using maximum likelihood methods such
+as those available in the SPSS MVA module, or use multiple imputation in
+SAS PROC MI to generate a distribution for the missing value and select a
+value for each missing case.
+4. Include a dummy (0, 1) variable in your analysis that indicates that data was
+missing, along with an imputed value replacing the missing data.
+5. Drop the cases or variables with large amounts of missing data from the anal-
+ysis (only feasible if the problem is confined to a small percentage of cases
+and/or variables that are not central to your analysis, and may introduce bias
+if the data is not MCAR).
+6. Conditional imputation: use available values to impute missing values (not
+recommended, as it may result in an underestimate of variance).
+7. Simple imputation: substitute a value such as the population mean for the
+missing value (not recommended, as it nearly always results in an extreme underestimate of variance)
+
+## Visualization
+
+A nice [htmlwidget website](http://www.htmlwidgets.org) for javascript plot in R.
+
+1. [histogram](./Visualization/histogram.Rmd)
+
+## R presentation
+
+From Yihui Xie's [blog](https://slides.yihui.name/xaringan/#1)
+
+## Tableau
+
+[website](https://www.tableau.com/products)
+
+## References
 
 [caret](http://topepo.github.io/caret/index.html)

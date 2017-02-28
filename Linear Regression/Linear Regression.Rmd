@@ -5,6 +5,11 @@ date: 2016-11-15
 output: html_notebook
 ---
 
+[Linear Regression under big data](https://zhuanlan.zhihu.com/p/25312342?utm_medium=social&utm_source=ZHShareTargetIDMore)
+
+
+
+
 ```{r}
 data(Sacramento)
 
@@ -30,6 +35,14 @@ fitControl <- trainControl(## 5-fold CV
 
 lmFit <- train(x = trainX, 
                y = sacTrain$price,
+               method = "lm", 
+               metric = "RMSE",
+               trControl = fitControl)
+
+lmFit
+
+lmFit <- train(price~. -price,
+               data = sacTrain,
                method = "lm", 
                metric = "RMSE",
                trControl = fitControl)

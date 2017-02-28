@@ -5,6 +5,8 @@ date: 2016-11-15
 output: html_notebook
 ---
 
+parameter __mtry__ indicates that how many variables are chosen in a subtree. 
+> (Number of variables available for splitting at each tree node)
 
 ```{r}
 data(segmentationData)
@@ -37,6 +39,21 @@ rfFit <- train(x = trainX,
 
 rfFit
 ```
+
+
+
+```{r}
+rfFit$finalModel
+
+str(getTree(rfFit$finalModel, k =10))
+```
+
+```{r}
+confusionMatrix(segTest$Class, predict(rfFit, segTest))
+
+table(segTest$Class, predict(rfFit, segTest))
+```
+
 
 
 Choose the largest accuracy.

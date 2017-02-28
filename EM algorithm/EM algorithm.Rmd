@@ -1,0 +1,12 @@
+---
+title: "EM Algorithm"
+author: Jingyu Bao
+date: 2016-11-17
+output: html_notebook
+---
+
+Iterations about latent variables and population parameters.
+
+
+
+[EM Algorithm](http://rstudio-pubs-static.s3.amazonaws.com/1001_3177e85f5e4840be840c84452780db52.html)

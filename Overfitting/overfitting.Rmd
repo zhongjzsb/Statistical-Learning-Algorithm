@@ -1,0 +1,49 @@
+---
+title: "Overfitting"
+author: Jingyu Bao
+date: 2016-11-22
+output: 
+  html_notebook
+---
+
+
+## What is Overfitting?
+
+> Let's say you attend a symphony and want to get the clearest, most faithful sound possible. So you buy a super-sensitive microphone and hearing aid to pick up all the sounds in the auditorium.
+
+> Then you start "overfitting," hearing the noise on top of the symphony. You hear your neighbors shuffling in their seats, the musicians turning their pages, and even the swishing of the conductor's coat jacket.
+
+> When you're at a concert, there's both the symphony and the random noise. Fitting a perfect model is only listening to the symphony. Over-fitting is when you hear more noise then you need to, or worse, letting the noise drown out the symphony.
+
+From [reference](https://www.quora.com/What-is-an-intuitive-explanation-of-overfitting) about how to recognize overfitting.
+
+
+
+
+## How to avoid overfitting?
+
+Found a [reference](https://www.quora.com/How-can-I-avoid-overfitting) about how to avoid overfitting.
+
+
+> __Keep it Simple__
+
+> Go for simpler models over more complicated models. Generally, the fewer parameters that you have to tune the better. If you can remove one of your parameters without significantly increasing the (out-of-sample prediction) error, that's great!
+
+> __Cross-Validation__
+
+> A standard way to find out-of-sample prediction error is to use 5-fold cross validation. In this case, you can try 4-fold cross validation. Use 18 data points to build the model, and then evaluate the error on the 6 data points left out of the model. Repeat this 4 times, using a different set of 6 data points each time. This is better representative of the error you would expect when you're trying to predict a future value, rather than just how well you can fit the data at hand.
+
+> __Regularization__
+
+> Some sort of regularization can help penalize certain sources of overfitting. A common one you can use in linear models is Ridge Regression (aka Tikhonov regularization) or LASSO, where your penalize your model if the sum of the norms of the slopes get too high.
+
+> __Tell a Story__
+
+> Can you justify why your predictors are in the model? Chances of fitting on spurious patterns are higher if you can't explain why your model is so (which is why neural networks are suspect when you're trying to fit data on a weak signal). Understand why each predictor indeed gives signal in prediction.
+
+> __Be Skeptical__
+
+> Unfortunately many initial results are wrong. With experience, you can develop an instinct on what's wrong and what's right, and be sure to test your model thoroughly before sharing or publishing it.
+
+
+

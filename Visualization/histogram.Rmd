@@ -1,0 +1,29 @@
+---
+title: "Visualization"
+author: "Jingyu Bao"
+date: '2017-02-13'
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    code_folding: show
+    df_print: paged
+    fig_caption: yes
+    fig_height: 7
+    fig_width: 10
+    highlight: pygments
+    number_sections: yes
+    theme: readable
+    toc: yes
+---
+
+
+histogram and density function in ggplot. Used in MFI non-life insurance mathematics.
+```{r}
+ggplot(histData[dist=="gamma"]) +
+    geom_histogram(aes(data, ..density..), alpha = 0.5) +
+    ggtitle("Estimated and True Density of Complete Gamma Data") +
+    stat_function(fun = function(x){dgamma(x, shape = alphaEst, scale = thetaEst)},
+                  colour = "red")
+```
+
