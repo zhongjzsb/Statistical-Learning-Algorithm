@@ -18,4 +18,7 @@ output:
 ---
 
 
+The RGB color system is built by Red, Green, Blue. Each color has 256 values with (r, g, b), and $0 \leg r, g, b < 255$.
+The HEX color converts these three numbers (r, g, b) to hexadecimal number #rrggbb, where these six numbers are between 0 and f.
+
 [w3schools color picker](https://www.w3schools.com/colors/colors_picker.asp)
