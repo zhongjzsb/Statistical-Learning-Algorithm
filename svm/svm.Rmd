@@ -11,10 +11,9 @@ output:
         self_contained: no
 ---
 
-## R Notebook YAML code
+Mapping the data into another space by phi function, try to seperate them as much as possible. And the kernel function which $K(x, y) = < \phi(x), \phi(y) >$ makes the computation much easier.
+[Kernel Explanation](https://www.quora.com/What-are-Kernels-in-Machine-Learning-and-SVM)
 
-[here](https://github.com/rstudio/rmarkdown/tree/gh-pages) and 
-[here](http://rmarkdown.rstudio.com/html_document_format.html)
 
 ## Simple Usage
 

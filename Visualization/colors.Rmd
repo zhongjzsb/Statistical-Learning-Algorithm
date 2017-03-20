@@ -1,0 +1,21 @@
+---
+title: "Color in plots"
+author: "Jingyu Bao"
+date: '2017-03-20'
+output:
+    html_document:
+        code_folding: show
+        df_print: paged
+        fig_caption: yes
+        fig_height: 7
+        fig_width: 10
+        highlight: pygments
+        number_sections: yes
+        theme: readable
+        toc: yes
+    pdf_document:
+        toc: yes
+---
+
+
+[w3schools color picker](https://www.w3schools.com/colors/colors_picker.asp)

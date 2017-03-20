@@ -1,5 +1,5 @@
 ---
-title: "Visualization"
+title: "Histogram"
 author: "Jingyu Bao"
 date: '2017-02-13'
 output:

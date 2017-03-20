@@ -144,6 +144,7 @@ missing value (not recommended, as it nearly always results in an extreme undere
 A nice [htmlwidget website](http://www.htmlwidgets.org) for javascript plot in R.
 
 1. [histogram](./Visualization/histogram.Rmd)
+2. [color](./Visualization/colors.Rmd)
 
 ## R presentation
 
@@ -152,6 +153,12 @@ From Yihui Xie's [blog](https://slides.yihui.name/xaringan/#1)
 ## Tableau
 
 [website](https://www.tableau.com/products)
+
+
+## R Notebook YAML code
+
+[here](https://github.com/rstudio/rmarkdown/tree/gh-pages) and 
+[here](http://rmarkdown.rstudio.com/html_document_format.html)
 
 ## References
 
