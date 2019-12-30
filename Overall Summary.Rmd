@@ -87,6 +87,8 @@ use the referenced chunk [this code chunk](#svmLinearInfo)
 
 - [neural network](./neural network/neural network.nb.html)
 
+- [Deep Learning](./Deep Learning/deep learning.html)
+
 ## Unsupervised Learning
 
 - [Kmeans](./kmeans/kmeans.nb.html)
