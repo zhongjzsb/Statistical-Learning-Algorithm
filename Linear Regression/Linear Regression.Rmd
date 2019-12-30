@@ -71,8 +71,10 @@ ridgeFit$finalModel$beta.pure
 coef(ridgeFit$finalModel, ridgeFit$finalModel$lambda)
 ```
 
+The model can also be 'glmnet'.
 
 Following examples are collected from [DataCamp](https://campus.datacamp.com/courses/preparing-for-machine-learning-interview-questions-in-r/)
+
 
 ```{r}
 # Lasso regression: mdlLasso
